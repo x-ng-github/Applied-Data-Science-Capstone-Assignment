@@ -63,7 +63,7 @@ def get_graph_lauchsite(site):
     else:
         title = site
         lchs = spacex_df[['Launch Site', 'class']][spacex_df['Launch Site']==site].groupby(['class']).value_counts().reset_index(name='count')
-        su_pie = px.pie(lchs, values='count', names=["Success", "Failed"], title=title)
+        su_pie = px.pie(lchs, values='count', names=["Failed", "Success"], title=title)
 
     return su_pie
 
